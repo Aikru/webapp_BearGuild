@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("./font/raleway/Raleway-Regular.ttf") format("truetype");
+}
+
+.raw {
+  font-family: "Raleway";
+}
+
+@font-face {
+  font-family: "Work sans";
+  src: url("./font/raleway/Raleway-Regular.ttf") format("truetype");
+}
+
+.ws {
+  font-family: "Work sans";
+}
