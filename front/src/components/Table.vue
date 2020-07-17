@@ -14,10 +14,11 @@
     </button>
     <ul class="py-3" v-if="State">
       <li
-        class="pl-6 mb-1 "
+        class="pl-6 mb-1 flex "
         v-for="player in table.players"
         :key="`${player.id}-table-${table.id}`"
       >
+        <div class="text-green-600 text-l font-bold mr-2  ">x</div>
         {{ player.firstname }} {{ player.lastname }}
       </li>
     </ul>
