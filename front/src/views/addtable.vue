@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref, computed } from "@vue/composition-api";
 import InputText from "@/components/InputText.vue";
 import store from "@/store/index.ts";
 import MyTitle from "@/components/TitlePage.vue";
@@ -101,9 +101,21 @@ export default defineComponent({
         return (TableObject.value[name] = event.value as number);
       TableObject.value[name] = event.value as string;
     };
+    const arrayPlayerID = computed(() =>
+      TableObject.value.players.map(el => el.id)
+    );
+
     const router = root.$router;
     const sendTable = () => {
-      store.dispatch.sendTable(TableObject.value);
+      // const {id, jdr_name, last_seance, first_seance, dm, time_between_seances} = TableObject.value;
+      // store.dispatch.sendTable({
+      //   id, jdr_name, last_seance, first_seance, dm, time_between_seances, players : arrayPlayerID.value
+      // });
+      store.dispatch.sendTable({
+        ...TableObject.value,
+        players: arrayPlayerID.value,
+      });
+      // {TableObject.value.players} = {arrayPlayerID}
       router.push("/adminpanel");
     };
 
