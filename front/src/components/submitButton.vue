@@ -1,15 +1,10 @@
 <template>
   <router-link :to="route">
-    <div
-      class="inline-flex items-center m-5 text-3xl font-semibold text-orange-500 raw"
-    >
-      <img
-        v-if="isPlusButton"
-        src="../svg/plus.png"
-        alt="plus"
-        class="object-contain w-5 h-full mr-2"
-      />
-      {{ textButton }}
+    <div class="inline-flex px-2 my-4  ml-16 text-white bg-orange-500 rounded">
+      <div v-if="isPlusButton" class="text-3xl">+</div>
+      <div class="self-center">
+        {{ textButton }}
+      </div>
     </div>
   </router-link>
 </template>
@@ -22,7 +17,7 @@ export default defineComponent({
   props: {
     textButton: String,
     route: String,
-    isPlusButton: { type: Boolean, default: false }
-  }
+    isPlusButton: { type: Boolean, default: false },
+  },
 });
 </script>

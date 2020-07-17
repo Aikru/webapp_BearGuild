@@ -82,7 +82,7 @@
 
     <button
       @click="sendMemberList()"
-      class="w-full h-24 m-auto text-2xl text-white bg-orange-500"
+      class="w-full  h-24 m-auto text-2xl text-white bg-orange-500"
     >
       Valider
     </button>
