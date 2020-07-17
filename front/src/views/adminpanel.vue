@@ -20,14 +20,25 @@
         Gestion des Membres
       </button>
 
-      <div class="py-3" v-if="memberState">
-        <div class="pl-12 mb-1" v-for="member in memberList" :key="member.id">
+      <div class="py-3 flex flex-col" v-if="memberState">
+        <div
+          class=" flex justify-around w-ful mb-2   font-semibold text-green-600 raw "
+        >
+          <p>Membres</p>
+          <p>Cotisations</p>
+          <p>Derniere présence</p>
+        </div>
+        <div class="pl-4 mb-1" v-for="member in memberList" :key="member.id">
           <router-link
-            class="flex justify-between w-2/3"
+            class="flex justify-end w-4/5"
             :props="member"
             :to="`/user/${member.id}`"
-            >{{ member.firstname }} {{ member.lastname }}
-            <span>{{ member.have_paid ? "✓" : "✗" }}</span>
+          >
+            <span class="w-full"
+              >{{ member.firstname }} {{ member.lastname }}
+            </span>
+            <span class="mx-10">{{ member.have_paid ? "✓" : "✗" }}</span>
+            <span> DD/MM/AA </span>
           </router-link>
         </div>
         <submit-button
